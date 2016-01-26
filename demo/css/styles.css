@@ -1,0 +1,29 @@
+body {
+  background: #ebedf1;
+  font-family: 'Lucida Grande', 'Heveltica Nueue', 'Helvetica', 'sans-serif';
+}
+demo {
+  padding: 3em;
+  display: block;
+}
+pre {
+  background: rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+section + section {
+  margin-top: 2em;
+  border-top: 1px dashed rgba(0,0,0,0.1);
+  padding-top: 2em;
+}
+.dark.well {
+  background: #1a1a1a;
+  color: #ccc;
+  padding: 3em;
+  margin: 1em;
+}
+.light {
+  border: 1px solid rgba(0,0,0,0.2);
+  padding: 3em;
+  margin: 1em;
+  background: #fff;
+}

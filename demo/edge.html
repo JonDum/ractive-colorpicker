@@ -1,0 +1,123 @@
+
+
+<html>
+    <head>
+        <title>Ractive-Select Demo</title>
+
+        <meta charset="utf-8">
+
+        <script src='http://cdn.ractivejs.org/edge/ractive.min.js'></script>
+        <link rel='stylesheet' href='css/styles.css'/>
+
+    </head>
+
+    <body>
+
+
+        <demo></demo>
+
+        <script src='../ractive-select.min.js'></script>
+
+        <script id='template' type='text/ractive'>
+
+        <h1>Ractive Select</h1>
+
+        <section>
+
+            <h2>Basic usage</h2>
+
+            <p>By binding <code>ractive-select</code> to <code>select</code>, you can use <code>&lt;select&gt;</code> tags like normal.</p>
+
+            <p>In your ractive instance:</p>
+
+        <pre>
+            <code>
+    new Ractive({
+        ...
+        components: {
+            select: require('ractive-select')
+        },
+        ...
+    });
+            </code>
+        </pre>
+        <p>In your template:</p>
+        <pre>
+            <code>
+    &lt;select&gt;
+        &lt;option&gt;Apple&lt;/option&gt;
+        &lt;option&gt;Banana&lt;/option&gt;
+        &lt;option&gt;Orange&lt;/option&gt;
+    &lt;/select&gt;
+            </code>
+        </pre>
+
+
+        <div style='margin-top:2em'>
+
+            Result:
+
+            <select>
+                <option>Apple</option>
+                <option>Banana</option>
+                <option>Orange</option>
+            </select>
+        </div>
+
+        </section>
+
+        <section>
+            <h2>Styling</h2>
+            <code>ractive-select</code> provides minimal styling, so it can easily be themed as needed
+
+            <div class='dark well'>
+                <select class='dark'>
+                    <option>Dark Style</option>
+                    <option>Banana</option>
+                    <option>Orange</option>
+                </select>
+            </div>
+
+            <div class='light'>
+                <select>
+                    <option>Another example</option>
+                    <option>Banana</option>
+                    <option>Orange</option>
+                </select>
+            </div>
+
+        </section>
+
+        </script>
+
+        <script>
+
+            var main = new Ractive({
+
+                el: 'demo',
+
+                template: '#template',
+
+                data: {
+                    data: [],
+                    perpage: 30,
+                },
+
+                components: {
+                    select:  RactiveSelect // don't do globals, kids
+                    //select: require('ractive-select') // use a buildsystem
+                },
+
+                oncomplete: function() {
+                    //debug stuff. Don't do this in production, kids
+                    window.s = this.findComponent('select');
+                }
+
+            })
+
+        </script>
+
+    </body>
+
+</html>
+

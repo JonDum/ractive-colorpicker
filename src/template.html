@@ -1,0 +1,74 @@
+<div class='ractive-colorpicker {{class}}'
+     style='{{style}}'>
+
+     <div class='pickers'>
+
+         {{#if showSLPicker}}
+         <div class='slPicker' on-mousedown="slMousedown">
+             <div class='base' style='background: {{base}}'></div>
+             <div class='saturation'></div>
+             <div class='lightness'></div>
+             <i class='xy indicator' style="left: {{saturation}}%; top: {{100 - lightness}}%"></i>
+         </div>
+         {{/if}}
+
+         {{#if showOpacitySlider}}
+         <div class='opacity checkered' on-mousedown="opacityMousedown">
+             <div style='background: linear-gradient(to right, transparent, {{opaque}})'></div>
+             <i class='x indicator' style='left: {{a*100}}%'></i>
+         </div>
+         {{/if}}
+
+         {{#if showFormats}}
+         <div class='formats'>
+
+             <label>
+                 <input type='radio' name='{{format}}' value='Hex' {{#if a < 1}}disabled{{/if}} checked/>
+                 Hex
+             </label>
+
+             <label>
+                 <input type='radio' name='{{format}}' value='Rgb'/>
+                 RGB
+             </label>
+
+             <label>
+                 <input type='radio' name='{{format}}' value='Hsl'/>
+                 HSL
+             </label>
+
+         </div>
+         {{/if}}
+
+     </div>
+
+     {{#if showHueSlider}}
+     <div class='hue' on-mousedown="hueMousedown">
+         <i class='y indicator' style='top: {{h*100}}%'></i>
+     </div>
+     {{/if}}
+
+     {{#if showInputs}}
+     <div class='inputs'>
+
+         <div class='color'>
+             <div class='checkered'></div>
+             <div style="background: {{value}}"></div>
+         </div>
+
+         <input class='value' type='text' value="{{value}}">
+
+         <div><label>H:</label><input type='number' value='{{hue}}' min='0' max='360'></div>
+         <div><label>S:</label><input type='number' value='{{saturation}}' min='0' max='100'></div>
+         <div><label>L:</label><input type='number' value='{{lightness}}' min='0' max='100'></div>
+
+         <div><label>R:</label><input type='number' value='{{r}}' min='0' max='255'></div>
+         <div><label>G:</label><input type='number' value='{{g}}' min='0' max='255'></div>
+         <div><label>B:</label><input type='number' value='{{b}}' min='0' max='255'></div>
+
+     </div>
+     {{/if}}
+
+
+</div>
+

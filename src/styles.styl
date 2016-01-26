@@ -1,0 +1,146 @@
+
+@import 'nib'
+@import layout
+
+$hue-gradient(dir)
+
+   if dir is 'v' or dir is 'vertical'
+       dir = 'to bottom'
+   else
+       dir = 'to right'
+
+   background linear-gradient(dir, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%)
+
+
+
+.ractive-colorpicker
+    display flex
+    user-select none
+
+    *
+        box-sizing border-box
+
+    .pickers, .inputs
+        layout vertical between
+
+    .slPicker
+        width 12rem
+        height 12rem
+        position relative
+        border 1px solid #333
+
+        div
+          width 100%
+          height 100%
+          position absolute
+
+        .saturation
+            background linear-gradient(to right, #fff, rgba(255, 255, 255, 0))
+
+        .lightness
+            background linear-gradient(to top, #000, rgba(0, 0, 0, 0))
+
+    .checkered
+        background #fff url('data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADJJREFUeNpiPHPmzH8GPMDY2JgRnzwTA4Vg1IDBYADj//94kwHD2bNn/48G4rA3ACDAANjWCn8l5H3aAAAAAElFTkSuQmCC')
+
+    .color
+        height 1.5rem
+        border 1px solid #000
+        position relative
+        .checkered
+            height 100%
+        :nth-child(2)
+            z-index 3
+            fit()
+
+    .hue
+        width 1rem
+        margin-left 1rem
+        position relative
+        $hue-gradient v
+        border 1px solid #333
+
+    .colorHexInput
+        width 6em
+
+    .inputs
+
+        margin-left 1rem
+
+        label
+            width 1em
+            display inline-block
+        div input
+            width 4em
+        input
+            height 2em
+            max-width 65px
+
+    .opacity
+        width 100%
+        max-width 12rem
+        height 1rem
+        position relative
+        border 1px solid #333
+        margin-top 0.5em
+        div
+            width 100%
+            height 100%
+
+    .formats
+        margin-top 0.5em
+
+    .indicator
+        display block
+        position absolute
+        z-index 30
+
+        &.x
+            width 4px
+            height 100%
+            border 1px solid #fff
+            top 0
+            &:before, &:after
+                content ''
+                position absolute
+                border 2px solid transparent
+
+            &:before
+                top -5px
+                border-top-color #333
+
+            &:before
+                bottom -5px
+                border-bottom-color #333
+
+        &.y
+            height 4px
+            width 100%
+            border 1px solid #fff
+            margin-top -@height
+            &:before, &:after
+                content ''
+                position absolute
+                border 2px solid transparent
+
+            &:before
+                left -4px
+                border-left-color #333
+
+            &:before
+                right -4px
+                border-right-color #333
+
+        &.xy
+            background #000
+            border 1px solid #fff
+            height 4px
+            width @height
+            border-radius 100%
+            left 90%
+            top 20%
+            margin-left (-@width/2)
+            margin-top (-@width/2)
+
+        .dragging &
+            border 1px dashed #fff

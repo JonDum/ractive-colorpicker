@@ -1,0 +1,135 @@
+/*
+    This helper function simplifies some of the flexbox
+    terminology. There are some layouts too advanced for this,
+    but in the majority of times this saves a lot of typing.
+
+    It's written with left, center, right always referring to
+    the horizontal axis, and top, middle, bottom always referring
+    to the vertical axis. 'reverse' is not supported because it
+    would make the helper way too complicated and hurt your brain.
+
+    Examples
+
+    // align items horizontally, top left
+    .foo
+        layout horizontal top left
+
+    // align items vertically on the right edge, vertically centered (middle)
+    .foo
+        layout vertical right middle
+
+    // align items horizontally on the bottom-left edge
+    .foo
+        layout horizontal bottom left
+
+    .foo
+        layout vertical nowrap bottom center
+
+
+    'reverse' is not supported because it would make the function overly-complex
+    and probably not be what you're expecting. It's also rare to have a need for
+    RTL layouts, so I excluded support that. If needed, drop-back down to
+    individual property:keys.
+
+*/
+
+fit()
+    position absolute
+    top 0
+    left 0
+    right 0
+    bottom 0
+
+fit-fixed()
+    position fixed
+    top 0
+    left 0
+    right 0
+    bottom 0
+
+
+layout()
+   a = arguments
+
+   if 'inline' in a
+       display inline-flex
+   else
+       display flex
+
+   if 'wrap-reverse' in a
+       flex-wrap wrap-reverse
+   if 'nowrap' in a
+       flex-wrap nowrap
+   else
+       flex-wrap wrap
+
+   if 'horizontal' in a
+       flex-direction row
+
+       // alignment horizontal axis
+       if 'left' in a
+           justify-content flex-start unless 'around' in a or 'between' in a
+       if 'right' in a
+           justify-content flex-end unless 'around' in a or 'between' in a
+       if 'center' in a
+           justify-content center unless 'around' in a or 'between' in a
+
+       if 'around' in a
+           justify-content space-around
+       if 'between' in a
+           justify-content space-between
+
+       // this s a nice default to have
+       align-content center unless 'around' in a or 'between' in a
+
+       //alignment vertical axis
+       if 'top' in a
+           align-content flex-start
+           align-items flex-start
+       else if 'bottom' in a
+           align-content flex-end
+           align-items flex-end
+       else if 'middle' in a
+           if 'tight' in a
+              align-content center
+           align-items center
+       else if 'stretch' in a
+           align-content stretch
+
+
+   if 'vertical' in a
+       flex-direction column
+
+       //alignment horizontal axis
+       if 'left' in a
+           align-items flex-start
+           unless 'loose' in a
+               align-content flex-start unless 'around' in a or 'between' in a
+
+       if 'right' in a
+           align-items flex-end
+           unless 'loose' in a
+               align-content flex-end unless 'around' in a or 'between' in a
+
+       if 'center' in a
+           align-items center
+           unless 'loose' in a
+               align-content center unless 'around' in a or 'between' in a
+
+       //alignment vertical axis
+       if 'top' in a
+           justify-content flex-start
+       if 'bottom' in a
+           justify-content flex-end
+       if 'middle' in a
+           justify-content center
+
+       if 'around' in a
+           align-content space-around
+           justify-content space-around
+       if 'between' in a
+           align-content space-between
+           justify-content space-between
+       if 'stretch' in a
+           justify-content stretch
+
