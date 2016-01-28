@@ -14,18 +14,19 @@ $hue-gradient(dir)
 
 
 .ractive-colorpicker
-    display flex
+    display inline-flex
     user-select none
 
     *
         box-sizing border-box
 
-    .pickers, .inputs
+    .pickers, .inputs, .inputs > div
         layout vertical between
+        flex 1 1 auto
 
     .slPicker
-        width 12rem
-        height 12rem
+        width 12em
+        height 12em
         position relative
         border 1px solid #333
 
@@ -64,8 +65,11 @@ $hue-gradient(dir)
         width 6em
 
     .inputs
-
         margin-left 1rem
+
+        .hsl, .rgb
+            flex 1 0 auto
+            margin-top 0.5em
 
         label
             width 1em
@@ -78,7 +82,7 @@ $hue-gradient(dir)
 
     .opacity
         width 100%
-        max-width 12rem
+        max-width 12em
         height 1rem
         position relative
         border 1px solid #333
