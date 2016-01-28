@@ -51,17 +51,20 @@ module.exports = Ractive.extend({
             get: function() { return round(this.get('h')*360) },
             set: function(h) {  this.set('h', h / 360) }
         },
+
         // 0 - 100
         saturation: {
             get: function() { return round(this.get('s')*100) },
             set: function(s) {  this.set('s', s / 100) }
         },
+
         // 0 - 100
         lightness: {
             get: function() { return round(this.get('l')*100) },
             set: function(l) {  this.set('l', l / 100) }
         },
 
+        // get current value without any opacity
         opaque: function() {
             return tinycolor(this.get('value')).toHexString();
         },
