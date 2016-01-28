@@ -20,8 +20,10 @@ module.exports = Ractive.extend({
             showOpacitySlider: true,
             showHueSlider: true,
             showInputs: true,
+            showValueInput: true,
+            showHslInputs: true,
+            showRgbInputs: true,
 
-            value: '#316b78',
             format: 'Hex',
             base: '#00e3ff',
 
@@ -36,6 +38,8 @@ module.exports = Ractive.extend({
             l: 0.47,
 
             a: 1,
+
+            value: '#32a5bf',
 
         }
     },
@@ -58,16 +62,14 @@ module.exports = Ractive.extend({
             set: function(l) {  this.set('l', l / 100) }
         },
 
-        opacity: {
-            get: function() { return this.get('a') },
-            set: function(a) {  this.set('a', a) }
-        },
-
         opaque: function() {
             return tinycolor(this.get('value')).toHexString();
         },
 
-        value: {
+        /**
+        * Internal. Get the 'color' by its parts
+        */
+        _value: {
 
             get: function() {
 
@@ -99,23 +101,25 @@ module.exports = Ractive.extend({
 
                 var self = this;
 
-                var format = self.get('format');
-
+                var format = this.get('format');
                 var color = tinycolor(v);
-
                 var hsv = color.toHsv();
 
                 var n = {
-
                     s: hsv.s,
                     l: hsv.v,
                     a: hsv.a,
-
-                    base: tinycolor.fromRatio({h: hsv.h, s: 1, v: 1}).toHexString()
+                    base: tinycolor.fromRatio({h: hsv.h, s: 1, v: 1}).toHexString(),
                 }
 
                 if( hsv.s !== 0 && hsv.v !== 0 )
                     n.h = hsv.h / 360;
+
+                if(n.a < 1 && format == 'Hex')
+                    format += '8';
+
+                // update the public
+                n.value = color[`to${format}String`]()
 
                 self.fire('change');
 
@@ -130,13 +134,24 @@ module.exports = Ractive.extend({
 
         var self = this;
 
+        //self.observe('_value', value => self.set('value', value));
+
+        self.observe('value', value => {
+            self.set('_value', value)
+        });
+
+        self.observe('h s l r g b a', function() {
+
+            self.set('value', self.get('_value'));
+
+        });
+
         // update rgb when hsv changes
         self.observe('h s l', function() {
 
             var h = this.get('h');
             var s = this.get('s');
             var v = this.get('l');
-
 
             var color = tinycolor.fromRatio({h, s, v});
 
@@ -146,32 +161,31 @@ module.exports = Ractive.extend({
                 r: rgb.r,
                 g: rgb.g,
                 b: rgb.b,
-                value: color.toHexString(),
             });
 
         }, {init: false});
 
         // update hsl when hsv changes
-        self.observe('r g b', function() {
+        //self.observe('r g b', function() {
 
-            // don't run this observer when dragging
-            // in the SL picker. It only causes reverb rounding errors
-            if(self._slMousedown)
-                return;
+            //// don't run this observer when dragging
+            //// in the SL picker. It only causes reverb rounding errors
+            //if(self._slMousedown)
+                //return;
 
-            var r = this.get('r');
-            var g = this.get('g');
-            var b = this.get('b');
+            //var r = this.get('r');
+            //var g = this.get('g');
+            //var b = this.get('b');
 
-            var color = tinycolor.fromRatio({r, g, b}).toHsv();
+            //var color = tinycolor.fromRatio({r, g, b}).toHsv();
 
-            self.set({
-                h: color.h / 360,
-                s: color.s,
-                v: color.v,
-            });
+            //self.set({
+                //h: color.h / 360,
+                //s: color.s,
+                //v: color.v,
+            //});
 
-        }, {init: false});
+        //}, {init: false});
 
         self.observe('a', function(a) {
             var format = this.get('format');
@@ -205,6 +219,49 @@ module.exports = Ractive.extend({
 
             requestAnimationFrame(self.boundUpdate);
         });
+
+
+        self.on('rgbChange', function(detail) {
+
+
+            var r = this.get('r');
+            var g = this.get('g');
+            var b = this.get('b');
+
+            var color = tinycolor({r,g,b});
+
+            var hsv = color.toHsv();
+
+            var n = {
+                s: hsv.s,
+                l: hsv.v,
+            };
+
+            if(color.s != 0 & color.h != 0 && !this._slMousedown)
+                n.h = hsv.h/360;
+
+            self.set(n);
+
+
+        });
+
+        //self.on('hslChange', function() {
+
+            //var h = this.get('h');
+            //var s = this.get('s');
+            //var v = this.get('l');
+
+            //var color = tinycolor.fromRatio({h, s, v});
+
+            //var rgb = color.toRgb();
+
+            //self.set({
+                //r: rgb.r,
+                //g: rgb.g,
+                //b: rgb.b,
+            //});
+
+        //}, {init: false});
 
         self.boundMouseMoveHandler = self.mouseMoveHandler.bind(self);
         self.boundMouseUpHandler = self.mouseUpHandler.bind(self);
@@ -268,9 +325,6 @@ module.exports = Ractive.extend({
            });
 
         }
-
-        //var color = tinycolor.fromRatio({h: self.hue, s: self.saturation, v: self.lightness});
-        //self.set('value', color.toHexString());
 
         if(self._hueMousedown || self._slMousedown || self._opacityMousedown)
             requestAnimationFrame(self.boundUpdate)

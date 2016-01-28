@@ -1,3 +1,9 @@
+     <div>
+     value: {{value}}
+     </div>
+     <div>
+     _value: {{_value}}
+     </div>
 <div class='ractive-colorpicker {{class}}'
      style='{{style}}'>
 
@@ -22,8 +28,8 @@
          {{#if showFormats}}
          <div class='formats'>
 
-             <label>
-                 <input type='radio' name='{{format}}' value='Hex' {{#if a < 1}}disabled{{/if}} checked/>
+             <label {{#if a < 1}}class='disabled'{{/if}}>
+                 <input type='radio' name='{{format}}' value='Hex' {{#if a < 1}}disabled{{/if}}/>
                  Hex
              </label>
 
@@ -53,18 +59,24 @@
 
          <div class='color'>
              <div class='checkered'></div>
-             <div style="background: {{value}}"></div>
+             <div style="background: {{_value}}"></div>
          </div>
 
-         <input class='value' type='text' value="{{value}}">
+         {{#if showValueInput}}
+         <input class='value' type='text' value="{{_value}}">
+         {{/if}}
 
-         <div><label>H:</label><input type='number' value='{{hue}}' min='0' max='360'></div>
-         <div><label>S:</label><input type='number' value='{{saturation}}' min='0' max='100'></div>
-         <div><label>L:</label><input type='number' value='{{lightness}}' min='0' max='100'></div>
+         {{#if showHslInputs}}
+         <div><label>H:</label><input type='number' value='{{hue}}'        min='0' max='360' on-change='hslChange'></div>
+         <div><label>S:</label><input type='number' value='{{saturation}}' min='0' max='100' on-change='hslChange'></div>
+         <div><label>L:</label><input type='number' value='{{lightness}} ' min='0' max='100' on-change='hslChange'></div>
+         {{/if}}
 
-         <div><label>R:</label><input type='number' value='{{r}}' min='0' max='255'></div>
-         <div><label>G:</label><input type='number' value='{{g}}' min='0' max='255'></div>
-         <div><label>B:</label><input type='number' value='{{b}}' min='0' max='255'></div>
+         {{#if showRgbInputs}}
+         <div><label>R:</label><input type='number' value='{{r}}' min='0' max='255' on-change='rgbChange'></div>
+         <div><label>G:</label><input type='number' value='{{g}}' min='0' max='255' on-change='rgbChange'></div>
+         <div><label>B:</label><input type='number' value='{{b}}' min='0' max='255' on-change='rgbChange'></div>
+         {{/if}}
 
      </div>
      {{/if}}
