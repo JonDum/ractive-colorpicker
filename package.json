@@ -1,6 +1,6 @@
 {
   "name": "ractive-colorpicker",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "A colorpicker component for ractive",
   "main": "src/ractive-colorpicker.js",
   "repository": "https://github.com/jondum/ractive-colorpicker",
