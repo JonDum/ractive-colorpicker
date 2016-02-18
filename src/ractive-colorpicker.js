@@ -90,14 +90,14 @@ module.exports = Ractive.extend({
                 var color;
 
                 if(format == 'Hsl')
-                    color = tinycolor.fromRatio({h, s, v, a});
+                    color = tinycolor.fromRatio({h:h, s:s, v:v, a:a});
                 else
-                    color = tinycolor.fromRatio({r, g, b, a});
+                    color = tinycolor.fromRatio({r:r, g:g, b:b, a:a});
 
                 if(a < 1 && format == 'Hex')
                     format += '8';
 
-                return color[`to${format}String`]();
+                return color['to'+format+'String']()
             },
 
             set: function(v) {
@@ -122,7 +122,7 @@ module.exports = Ractive.extend({
                     format += '8';
 
                 // update the public
-                n.value = color[`to${format}String`]()
+                n.value = color['to'+format+'String']()
 
                 self.fire('change');
 
@@ -137,16 +137,12 @@ module.exports = Ractive.extend({
 
         var self = this;
 
-        //self.observe('_value', value => self.set('value', value));
-
-        self.observe('value', value => {
+        self.observe('value', function(value) {
             self.set('_value', value)
         });
 
         self.observe('h s l r g b a', function() {
-
             self.set('value', self.get('_value'));
-
         });
 
         // update rgb when hsv changes
@@ -156,7 +152,7 @@ module.exports = Ractive.extend({
             var s = this.get('s');
             var v = this.get('l');
 
-            var color = tinycolor.fromRatio({h, s, v});
+            var color = tinycolor.fromRatio({h:h, s:s, v:v});
 
             var rgb = color.toRgb();
 
@@ -168,27 +164,6 @@ module.exports = Ractive.extend({
 
         }, {init: false});
 
-        // update hsl when hsv changes
-        //self.observe('r g b', function() {
-
-            //// don't run this observer when dragging
-            //// in the SL picker. It only causes reverb rounding errors
-            //if(self._slMousedown)
-                //return;
-
-            //var r = this.get('r');
-            //var g = this.get('g');
-            //var b = this.get('b');
-
-            //var color = tinycolor.fromRatio({r, g, b}).toHsv();
-
-            //self.set({
-                //h: color.h / 360,
-                //s: color.s,
-                //v: color.v,
-            //});
-
-        //}, {init: false});
 
         self.observe('a', function(a) {
             var format = this.get('format');
@@ -221,17 +196,17 @@ module.exports = Ractive.extend({
             document.addEventListener('mouseup', self.boundMouseUpHandler);
 
             requestAnimationFrame(self.boundUpdate);
+
         });
 
 
         self.on('rgbChange', function(detail) {
 
-
             var r = this.get('r');
             var g = this.get('g');
             var b = this.get('b');
 
-            var color = tinycolor({r,g,b});
+            var color = tinycolor({r:r, g:g, b:b});
 
             var hsv = color.toHsv();
 
@@ -244,7 +219,6 @@ module.exports = Ractive.extend({
                 n.h = hsv.h/360;
 
             self.set(n);
-
 
         });
 
@@ -304,7 +278,7 @@ module.exports = Ractive.extend({
 
             self.set({
                 h: hue,
-                base,
+                base: base,
             });
         }
 
@@ -324,7 +298,7 @@ module.exports = Ractive.extend({
            var a = clamp((self._lastMouseX - self._opacityRect.left) / self._opacityRect.width, 0, 1);
 
            self.set({
-               a
+               a: a
            });
 
         }
