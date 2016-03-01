@@ -1,32 +1,28 @@
-
-
 <html>
     <head>
-        <title>Ractive-Select Demo</title>
+        <title>ractive-colorpicker Demo</title>
 
         <meta charset="utf-8">
 
         <script src='http://cdn.ractivejs.org/edge/ractive.min.js'></script>
+
         <link rel='stylesheet' href='css/styles.css'/>
 
     </head>
 
     <body>
 
-
         <demo></demo>
 
-        <script src='../ractive-select.min.js'></script>
+        <script src='../ractive-colorpicker.min.js'></script>
 
         <script id='template' type='text/ractive'>
 
-        <h1>Ractive Select</h1>
+        <h1>Ractive colorpicker</h1>
 
         <section>
 
             <h2>Basic usage</h2>
-
-            <p>By binding <code>ractive-select</code> to <code>select</code>, you can use <code>&lt;select&gt;</code> tags like normal.</p>
 
             <p>In your ractive instance:</p>
 
@@ -35,7 +31,7 @@
     new Ractive({
         ...
         components: {
-            select: require('ractive-select')
+            colorpicker: require('ractive-colorpicker')
         },
         ...
     });
@@ -44,46 +40,133 @@
         <p>In your template:</p>
         <pre>
             <code>
-    &lt;select&gt;
-        &lt;option&gt;Apple&lt;/option&gt;
-        &lt;option&gt;Banana&lt;/option&gt;
-        &lt;option&gt;Orange&lt;/option&gt;
-    &lt;/select&gt;
+    &lt;colorpicker value="\{{color}}"/&gt;
+    &lt;div&gt;\{{color}}&lt;/div&gt;
+    &lt;div style='width: 40px; height: 40px; background: \{{color}}'&gt;&lt;/div&gt;
             </code>
         </pre>
 
 
+        Live:
+
         <div style='margin-top:2em'>
 
-            Result:
+            <colorpicker value='{{color}}'/>
 
-            <select>
-                <option>Apple</option>
-                <option>Banana</option>
-                <option>Orange</option>
-            </select>
+            <div style='margin-top: 2em'>{{color}}</div>
+            <div style='width: 40px; height: 40px; background: {{color}}'></div>
+
         </div>
 
         </section>
 
         <section>
-            <h2>Styling</h2>
-            <code>ractive-select</code> provides minimal styling, so it can easily be themed as needed
+            <h2>Button / Textinput</h2>
+
+            <p><code>ractive-colorpicker</code> is designed to be just the
+            colorpicker so that it is easy to place in a popup/dropdown to make
+            colorpicker buttons or inputs which could then be encapsulated into
+            separate components.
+            </p>
+
+        <pre>
+            <code>
+    &lt;div class='color picker button' style='background: \{{color}}' on-tap='toggle("open")&gt;
+        &lt;dropdown open='\{{open}}'&gt;
+            &lt;colorpicker value='\{{color}}'/&gt;
+        &lt;/dropdown&gt;
+    &lt;/div&gt;
+            </code>
+        </pre>
+
+           TODO: live example
+
+        <pre>
+            <code>
+    &lt;div class='color picker input'&gt;
+
+        &lt;input type='text' value='\{{color}}'
+            on-focus='set("open", true)'
+            on-blur='set("open", false)'/&gt;
+
+        &lt;button class='color picker' style='background: \{{color}}'/&gt;
+
+        &lt;dropdown open='\{{open}}'&gt;
+            &lt;colorpicker value='\{{color}}'/&gt;
+        &lt;/dropdown&gt;
+
+    &lt;/div&gt;
+            </code>
+        </pre>
+
+        TODO: live example
+
+        </section>
+
+        <section>
+
+            <h2>Configuration</h2>
+
+            <p>
+                You can hide/show various parts of the colorpicker with attributes
+            </p>
+
+            <pre>
+            <code>
+
+    &lt;colorpicker showFormats='false'
+                 showOpacitySlider='false'
+                 showHueSlider='false'
+                 showInputs='true'
+                 showSLPicker='true'/&gt;
+
+            </code>
+            </pre>
+
+            <label>
+                <input type='checkbox' checked='{{showSLPicker}}'/>
+                showSLPicker
+            </label>
+
+            <label>
+                <input type='checkbox' checked='{{showOpacitySlider}}'/>
+                showOpacitySlider
+            </label>
+            <label>
+                <input type='checkbox' checked='{{showFormats}}'/>
+                showFormats
+            </label>
+
+            <label>
+                <input type='checkbox' checked='{{showHueSlider}}'/>
+                showHueSlider
+            </label>
+            <label>
+                <input type='checkbox' checked='{{showInputs}}'/>
+                showInputs
+            </label>
+
+            <div style='margin-top: 2em'>
+                <colorpicker showFormats='{{showFormats}}' showSLPicker='{{showSLPicker}}' showOpacitySlider='{{showOpacitySlider}}' showHueSlider='{{showHueSlider}}' showInputs='{{showInputs}}'/>
+            </div>
+
+        </section>
+
+        <section>
+
+            <h2>Styling (TODO)</h2>
+
+            <p><code>ractive-colorpicker</code> provides minimal styling, so it
+            can easily be themed as needed. <code>class</code> and
+            <code>style</code> attributes forward to the
+            <code>.ractive-colorpicker</code> element</p>
 
             <div class='dark well'>
-                <select class='dark'>
-                    <option>Dark Style</option>
-                    <option>Banana</option>
-                    <option>Orange</option>
-                </select>
+                <colorpicker value='{{color}}'/>
             </div>
 
             <div class='light'>
-                <select>
-                    <option>Another example</option>
-                    <option>Banana</option>
-                    <option>Orange</option>
-                </select>
+                <colorpicker value='{{color}}'/>
             </div>
 
         </section>
@@ -99,18 +182,23 @@
                 template: '#template',
 
                 data: {
-                    data: [],
-                    perpage: 30,
+
+                    showFormats: true,
+                    showSLPicker: true,
+                    showOpacitySlider: true,
+                    showHueSlider: true,
+                    showInputs: true,
+
                 },
 
                 components: {
-                    select:  RactiveSelect // don't do globals, kids
-                    //select: require('ractive-select') // use a buildsystem
+                    colorpicker:  RactiveColorpicker // don't do globals, kids
+                    //colorpicker: require('ractive-colorpicker') // use a buildsystem
                 },
 
                 oncomplete: function() {
                     //debug stuff. Don't do this in production, kids
-                    window.s = this.findComponent('select');
+                    window.s = this.findComponent('colorpicker');
                 }
 
             })
