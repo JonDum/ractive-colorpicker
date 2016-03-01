@@ -2,10 +2,9 @@ var webpack = require('webpack');
 
 module.exports = {
     entry: 'src/ractive-colorpicker',
-    production: true,
     output: {
         path: __dirname + '/',
-        filename: 'ractive-colorpicker.min.js',
+        filename: 'ractive-colorpicker.js',
         library: 'RactiveColorpicker',
         libraryTarget: 'umd'
     },
@@ -14,19 +13,12 @@ module.exports = {
         modulesDirectories: ['node_modules', 'src'],
         extensions: ['', '.js', '.styl', '.html'],
     },
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        })
-    ],
     module: {
         loaders: [
             {
                 test: /\.js$/,
                 loader: 'babel',
-                exclude: /(node_modules|lib|parsers|syntax)/,
+                exclude: /(node_modules)/,
                 query: {
                     cacheDirectory: true,
                     presets: ['es2015']

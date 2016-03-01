@@ -273,22 +273,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	            self.set(n);
 	        });
 
-	        self.on('hslChange', function () {
+	        //self.on('hslChange', function() {
 
-	            var h = this.get('h');
-	            var s = this.get('s');
-	            var v = this.get('l');
+	        //var h = this.get('h');
+	        //var s = this.get('s');
+	        //var v = this.get('l');
 
-	            var color = tinycolor.fromRatio({ h: h, s: s, v: v });
+	        //var color = tinycolor.fromRatio({h, s, v});
 
-	            var rgb = color.toRgb();
+	        //var rgb = color.toRgb();
 
-	            self.set({
-	                r: rgb.r,
-	                g: rgb.g,
-	                b: rgb.b
-	            });
-	        }, { init: false });
+	        //self.set({
+	        //r: rgb.r,
+	        //g: rgb.g,
+	        //b: rgb.b,
+	        //});
+
+	        //}, {init: false});
 
 	        self.boundMouseMoveHandler = self.mouseMoveHandler.bind(self);
 	        self.boundMouseUpHandler = self.mouseUpHandler.bind(self);
@@ -333,8 +334,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var saturation = clamp((self._lastMouseX - self._slRect.left) / self._slRect.width, 0, 1);
 	            var lightness = clamp(1 - (self._lastMouseY - self._slRect.top) / self._slRect.height, 0, 1);
 
-	            console.log(saturation);
-
 	            self.set({
 	                s: saturation,
 	                l: lightness
@@ -361,10 +360,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function round(input) {
 	    return Math.round(input);
-	}
-
-	function isTouchDevice() {
-	    return 'ontouchstart' in win || 'onmsgesturechange' in win;
 	}
 
 /***/ },
