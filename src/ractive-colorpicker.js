@@ -1,7 +1,6 @@
 
 require('./styles.styl');
 
-var win = window;
 var doc = document;
 
 var tinycolor = require('tinycolor2');
@@ -34,7 +33,7 @@ module.exports = Ractive.extend({
 
             // 0 - 1
             h: 0.53,
-            s: 0.59,
+            //s: 0.59,
             l: 0.47,
 
             a: 1,
@@ -192,8 +191,8 @@ module.exports = Ractive.extend({
             self._lastMouseX = event.clientX;
             self._lastMouseY = event.clientY;
 
-            document.addEventListener('mousemove', self.boundMouseMoveHandler);
-            document.addEventListener('mouseup', self.boundMouseUpHandler);
+            doc.addEventListener('mousemove', self.boundMouseMoveHandler);
+            doc.addEventListener('mouseup', self.boundMouseUpHandler);
 
             requestAnimationFrame(self.boundUpdate);
 
@@ -263,8 +262,8 @@ module.exports = Ractive.extend({
         self._slMousedown =
         self._opacityMousedown = false;
 
-        document.removeEventListener('mousemove', self.boundMouseMoveHandler);
-        document.removeEventListener('mouseup', self.boundMouseUpHandler);
+        doc.removeEventListener('mousemove', self.boundMouseMoveHandler);
+        doc.removeEventListener('mouseup', self.boundMouseUpHandler);
     },
 
     update: function() {
@@ -310,8 +309,7 @@ module.exports = Ractive.extend({
 
 });
 
-function clamp(val, min, max)
-{
+function clamp(val, min, max) {
     return Math.max(Math.min(val, max), min);
 }
 
@@ -319,6 +317,3 @@ function round(input) {
     return Math.round(input);
 }
 
-function isTouchDevice() {
-    return 'ontouchstart' in win || 'onmsgesturechange' in win;
-}

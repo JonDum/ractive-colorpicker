@@ -1,14 +1,14 @@
-<div class='ractive-colorpicker {{class}}'
-     style='{{style}}'>
+<div class='ractive-colorpicker {{.class}}'
+     style='{{.style}}'>
 
      <div class='pickers'>
 
          {{#if showSLPicker}}
          <div class='slPicker' on-mousedown="slMousedown">
-             <div class='base' style='background: {{base}}'></div>
+             <div class='base' style='background: {{.base}}'></div>
              <div class='saturation'></div>
              <div class='lightness'></div>
-             <i class='xy indicator' style="left: {{saturation}}%; top: {{100 - lightness}}%"></i>
+             <i class='xy indicator' style="left: {{.saturation}}%; top: {{100 - .lightness}}%"></i>
          </div>
          {{/if}}
 
