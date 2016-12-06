@@ -18,7 +18,7 @@ module.exports = function(grunt) {
                 devtool: 'none',
                 output: {
                     pathinfo: false,
-                    filename: 'ractive-select.min.js',
+                    filename: 'ractive-colorpicker.min.js',
                 },
                 plugins: [
                     new webpack.DefinePlugin({

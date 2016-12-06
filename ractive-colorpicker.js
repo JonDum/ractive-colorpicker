@@ -397,7 +397,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 	// module
-	exports.push([module.id, ".ractive-colorpicker {\n  display: -webkit-inline-box;\n  display: -moz-inline-box;\n  display: -webkit-inline-flex;\n  display: -ms-inline-flexbox;\n  display: inline-box;\n  display: inline-flex;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.ractive-colorpicker * {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.ractive-colorpicker .pickers,\n.ractive-colorpicker .inputs,\n.ractive-colorpicker .inputs > div {\n  display: -webkit-box;\n  display: -moz-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: box;\n  display: flex;\n  -webkit-box-lines: multiple;\n  -moz-box-lines: multiple;\n  -o-box-lines: multiple;\n  -webkit-flex-wrap: wrap;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  -webkit-box-orient: vertical;\n  -moz-box-orient: vertical;\n  -o-box-orient: vertical;\n  -webkit-flex-direction: column;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -ms-flex-line-pack: justify;\n  -webkit-align-content: space-between;\n  align-content: space-between;\n  -webkit-box-pack: justify;\n  -moz-box-pack: justify;\n  -o-box-pack: justify;\n  -ms-flex-pack: justify;\n  -webkit-justify-content: space-between;\n  justify-content: space-between;\n  -webkit-box-flex: 1;\n  -moz-box-flex: 1;\n  -o-box-flex: 1;\n  box-flex: 1;\n  -webkit-flex: 1 1 auto;\n  -ms-flex: 1 1 auto;\n  flex: 1 1 auto;\n}\n.ractive-colorpicker .slPicker {\n  width: 12em;\n  height: 12em;\n  position: relative;\n  border: 1px solid #333;\n}\n.ractive-colorpicker .slPicker div {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n}\n.ractive-colorpicker .slPicker .saturation {\n  background: -webkit-linear-gradient(left, #fff, rgba(255,255,255,0));\n  background: -moz-linear-gradient(left, #fff, rgba(255,255,255,0));\n  background: -o-linear-gradient(left, #fff, rgba(255,255,255,0));\n  background: -ms-linear-gradient(left, #fff, rgba(255,255,255,0));\n  background: linear-gradient(to right, #fff, rgba(255,255,255,0));\n}\n.ractive-colorpicker .slPicker .lightness {\n  background: -webkit-linear-gradient(bottom, #000, rgba(0,0,0,0));\n  background: -moz-linear-gradient(bottom, #000, rgba(0,0,0,0));\n  background: -o-linear-gradient(bottom, #000, rgba(0,0,0,0));\n  background: -ms-linear-gradient(bottom, #000, rgba(0,0,0,0));\n  background: linear-gradient(to top, #000, rgba(0,0,0,0));\n}\n.ractive-colorpicker .checkered {\n  background: #fff url(\"data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADJJREFUeNpiPHPmzH8GPMDY2JgRnzwTA4Vg1IDBYADj//94kwHD2bNn/48G4rA3ACDAANjWCn8l5H3aAAAAAElFTkSuQmCC\");\n}\n.ractive-colorpicker .color {\n  height: 1.5rem;\n  border: 1px solid #000;\n  position: relative;\n}\n.ractive-colorpicker .color .checkered {\n  height: 100%;\n}\n.ractive-colorpicker .color :nth-child(2) {\n  z-index: 3;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n}\n.ractive-colorpicker .hue {\n  width: 1rem;\n  margin-left: 1rem;\n  position: relative;\n  background: -webkit-linear-gradient(top, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);\n  background: -moz-linear-gradient(top, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);\n  background: -o-linear-gradient(top, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);\n  background: -ms-linear-gradient(top, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);\n  background: linear-gradient(to bottom, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);\n  border: 1px solid #333;\n}\n.ractive-colorpicker .colorHexInput {\n  width: 6em;\n}\n.ractive-colorpicker .inputs {\n  margin-left: 1rem;\n}\n.ractive-colorpicker .inputs .hsl,\n.ractive-colorpicker .inputs .rgb {\n  -webkit-box-flex: 1;\n  -moz-box-flex: 1;\n  -o-box-flex: 1;\n  box-flex: 1;\n  -webkit-flex: 1 0 auto;\n  -ms-flex: 1 0 auto;\n  flex: 1 0 auto;\n  margin-top: 0.5em;\n}\n.ractive-colorpicker .inputs label {\n  width: 1em;\n  display: inline-block;\n}\n.ractive-colorpicker .inputs div input {\n  width: 4em;\n}\n.ractive-colorpicker .inputs input {\n  height: 2em;\n  max-width: 65px;\n}\n.ractive-colorpicker .opacity {\n  width: 100%;\n  max-width: 12em;\n  height: 1rem;\n  position: relative;\n  border: 1px solid #333;\n  margin-top: 0.5em;\n}\n.ractive-colorpicker .opacity div {\n  width: 100%;\n  height: 100%;\n}\n.ractive-colorpicker .formats {\n  margin-top: 0.5em;\n}\n.ractive-colorpicker .indicator {\n  display: block;\n  position: absolute;\n  z-index: 30;\n}\n.ractive-colorpicker .indicator.x {\n  width: 4px;\n  height: 100%;\n  border: 1px solid #fff;\n  top: 0;\n}\n.ractive-colorpicker .indicator.x:before,\n.ractive-colorpicker .indicator.x:after {\n  content: '';\n  position: absolute;\n  border: 2px solid transparent;\n}\n.ractive-colorpicker .indicator.x:before {\n  top: -5px;\n  border-top-color: #333;\n}\n.ractive-colorpicker .indicator.x:before {\n  bottom: -5px;\n  border-bottom-color: #333;\n}\n.ractive-colorpicker .indicator.y {\n  height: 4px;\n  width: 100%;\n  border: 1px solid #fff;\n  margin-top: -4px;\n}\n.ractive-colorpicker .indicator.y:before,\n.ractive-colorpicker .indicator.y:after {\n  content: '';\n  position: absolute;\n  border: 2px solid transparent;\n}\n.ractive-colorpicker .indicator.y:before {\n  left: -4px;\n  border-left-color: #333;\n}\n.ractive-colorpicker .indicator.y:before {\n  right: -4px;\n  border-right-color: #333;\n}\n.ractive-colorpicker .indicator.xy {\n  background: #000;\n  border: 1px solid #fff;\n  height: 4px;\n  width: 4px;\n  -webkit-border-radius: 100%;\n  border-radius: 100%;\n  left: 90%;\n  top: 20%;\n  margin-left: -2px;\n  margin-top: -2px;\n}\n.dragging .ractive-colorpicker .indicator {\n  border: 1px dashed #fff;\n}\n", ""]);
+	exports.push([module.id, ".ractive-colorpicker {\n  display: -webkit-inline-box;\n  display: -moz-inline-box;\n  display: -webkit-inline-flex;\n  display: -ms-inline-flexbox;\n  display: inline-box;\n  display: inline-flex;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.ractive-colorpicker * {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.ractive-colorpicker .pickers,\n.ractive-colorpicker .inputs,\n.ractive-colorpicker .inputs > div {\n  display: -webkit-box;\n  display: -moz-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: box;\n  display: flex;\n  -webkit-box-lines: multiple;\n  -moz-box-lines: multiple;\n  -o-box-lines: multiple;\n  -webkit-flex-wrap: wrap;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  -webkit-box-orient: vertical;\n  -moz-box-orient: vertical;\n  -o-box-orient: vertical;\n  -webkit-flex-direction: column;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -ms-flex-line-pack: justify;\n  -webkit-align-content: space-between;\n  align-content: space-between;\n  -webkit-box-pack: justify;\n  -moz-box-pack: justify;\n  -o-box-pack: justify;\n  -ms-flex-pack: justify;\n  -webkit-justify-content: space-between;\n  justify-content: space-between;\n  -webkit-box-flex: 1;\n  -moz-box-flex: 1;\n  -o-box-flex: 1;\n  box-flex: 1;\n  -webkit-flex: 1 1 auto;\n  -ms-flex: 1 1 auto;\n  flex: 1 1 auto;\n}\n.ractive-colorpicker .slPicker {\n  width: 12em;\n  height: 12em;\n  position: relative;\n  border: 1px solid #333;\n}\n.ractive-colorpicker .slPicker div {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n}\n.ractive-colorpicker .slPicker .saturation {\n  background: -webkit-linear-gradient(left, #fff, rgba(255,255,255,0));\n  background: -moz-linear-gradient(left, #fff, rgba(255,255,255,0));\n  background: -o-linear-gradient(left, #fff, rgba(255,255,255,0));\n  background: -ms-linear-gradient(left, #fff, rgba(255,255,255,0));\n  background: linear-gradient(to right, #fff, rgba(255,255,255,0));\n}\n.ractive-colorpicker .slPicker .lightness {\n  background: -webkit-linear-gradient(bottom, #000, rgba(0,0,0,0));\n  background: -moz-linear-gradient(bottom, #000, rgba(0,0,0,0));\n  background: -o-linear-gradient(bottom, #000, rgba(0,0,0,0));\n  background: -ms-linear-gradient(bottom, #000, rgba(0,0,0,0));\n  background: linear-gradient(to top, #000, rgba(0,0,0,0));\n}\n.ractive-colorpicker .checkered {\n  background: #fff url(\"data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADJJREFUeNpiPHPmzH8GPMDY2JgRnzwTA4Vg1IDBYADj//94kwHD2bNn/48G4rA3ACDAANjWCn8l5H3aAAAAAElFTkSuQmCC\");\n}\n.ractive-colorpicker .color {\n  height: 1.5rem;\n  border: 1px solid #000;\n  position: relative;\n}\n.ractive-colorpicker .color .checkered {\n  height: 100%;\n}\n.ractive-colorpicker .color :nth-child(2) {\n  z-index: 3;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n}\n.ractive-colorpicker .hue {\n  width: 1rem;\n  margin-left: 1rem;\n  position: relative;\n  background: -webkit-linear-gradient(top, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);\n  background: -moz-linear-gradient(top, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);\n  background: -o-linear-gradient(top, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);\n  background: -ms-linear-gradient(top, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);\n  background: linear-gradient(to bottom, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);\n  border: 1px solid #333;\n}\n.ractive-colorpicker .colorHexInput {\n  width: 6em;\n}\n.ractive-colorpicker .inputs {\n  margin-left: 1rem;\n}\n.ractive-colorpicker .inputs .hsl,\n.ractive-colorpicker .inputs .rgb {\n  -webkit-box-flex: 1;\n  -moz-box-flex: 1;\n  -o-box-flex: 1;\n  box-flex: 1;\n  -webkit-flex: 1 0 auto;\n  -ms-flex: 1 0 auto;\n  flex: 1 0 auto;\n  margin-top: 0.5em;\n}\n.ractive-colorpicker .inputs label {\n  width: 1em;\n  display: inline-block;\n}\n.ractive-colorpicker .inputs div input {\n  width: 4em;\n}\n.ractive-colorpicker .inputs input {\n  height: 2em;\n  max-width: 65px;\n}\n.ractive-colorpicker .opacity {\n  width: 100%;\n  max-width: 12em;\n  height: 1rem;\n  position: relative;\n  border: 1px solid #333;\n  margin-top: 0.5em;\n}\n.ractive-colorpicker .opacity div {\n  width: 100%;\n  height: 100%;\n}\n.ractive-colorpicker .formats {\n  margin-top: 0.5em;\n}\n.ractive-colorpicker .indicator {\n  display: block;\n  position: absolute;\n  z-index: 30;\n}\n.ractive-colorpicker .indicator.x {\n  width: 4px;\n  height: 100%;\n  border: 1px solid #fff;\n  top: 0;\n}\n.ractive-colorpicker .indicator.x:before,\n.ractive-colorpicker .indicator.x:after {\n  content: '';\n  position: absolute;\n  border: 2px solid transparent;\n}\n.ractive-colorpicker .indicator.x:before {\n  top: -5px;\n  border-top-color: #333;\n}\n.ractive-colorpicker .indicator.x:before {\n  bottom: -5px;\n  border-bottom-color: #333;\n}\n.ractive-colorpicker .indicator.y {\n  height: 4px;\n  width: 100%;\n  border: 1px solid #fff;\n  margin-top: -4px;\n}\n.ractive-colorpicker .indicator.y:before,\n.ractive-colorpicker .indicator.y:after {\n  content: '';\n  position: absolute;\n  border: 2px solid transparent;\n}\n.ractive-colorpicker .indicator.y:before {\n  left: -4px;\n  border-left-color: #333;\n}\n.ractive-colorpicker .indicator.y:before {\n  right: -4px;\n  border-right-color: #333;\n}\n.ractive-colorpicker .indicator.xy {\n  background: #000;\n  border: 1px solid #fff;\n  height: 4px;\n  width: 4px;\n  border-radius: 100%;\n  left: 90%;\n  top: 20%;\n  margin-left: -2px;\n  margin-top: -2px;\n}\n.dragging .ractive-colorpicker .indicator {\n  border: 1px dashed #fff;\n}\n", ""]);
 
 	// exports
 
@@ -481,10 +481,11 @@ return /******/ (function(modules) { // webpackBootstrap
 			return document.head || document.getElementsByTagName("head")[0];
 		}),
 		singletonElement = null,
-		singletonCounter = 0;
+		singletonCounter = 0,
+		styleElementsInsertedAtTop = [];
 
 	module.exports = function(list, options) {
-		if(false) {
+		if(true) {
 			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
 		}
 
@@ -492,6 +493,9 @@ return /******/ (function(modules) { // webpackBootstrap
 		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
 		// tags it will allow on a page
 		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+
+		// By default, add <style> tags to the bottom of <head>.
+		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
 
 		var styles = listToStyles(list);
 		addStylesToDom(styles, options);
@@ -559,19 +563,44 @@ return /******/ (function(modules) { // webpackBootstrap
 		return styles;
 	}
 
-	function createStyleElement() {
-		var styleElement = document.createElement("style");
+	function insertStyleElement(options, styleElement) {
 		var head = getHeadElement();
+		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+		if (options.insertAt === "top") {
+			if(!lastStyleElementInsertedAtTop) {
+				head.insertBefore(styleElement, head.firstChild);
+			} else if(lastStyleElementInsertedAtTop.nextSibling) {
+				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+			} else {
+				head.appendChild(styleElement);
+			}
+			styleElementsInsertedAtTop.push(styleElement);
+		} else if (options.insertAt === "bottom") {
+			head.appendChild(styleElement);
+		} else {
+			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+		}
+	}
+
+	function removeStyleElement(styleElement) {
+		styleElement.parentNode.removeChild(styleElement);
+		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+		if(idx >= 0) {
+			styleElementsInsertedAtTop.splice(idx, 1);
+		}
+	}
+
+	function createStyleElement(options) {
+		var styleElement = document.createElement("style");
 		styleElement.type = "text/css";
-		head.appendChild(styleElement);
+		insertStyleElement(options, styleElement);
 		return styleElement;
 	}
 
-	function createLinkElement() {
+	function createLinkElement(options) {
 		var linkElement = document.createElement("link");
-		var head = getHeadElement();
 		linkElement.rel = "stylesheet";
-		head.appendChild(linkElement);
+		insertStyleElement(options, linkElement);
 		return linkElement;
 	}
 
@@ -580,7 +609,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 		if (options.singleton) {
 			var styleIndex = singletonCounter++;
-			styleElement = singletonElement || (singletonElement = createStyleElement());
+			styleElement = singletonElement || (singletonElement = createStyleElement(options));
 			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
 			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
 		} else if(obj.sourceMap &&
@@ -589,18 +618,18 @@ return /******/ (function(modules) { // webpackBootstrap
 			typeof URL.revokeObjectURL === "function" &&
 			typeof Blob === "function" &&
 			typeof btoa === "function") {
-			styleElement = createLinkElement();
+			styleElement = createLinkElement(options);
 			update = updateLink.bind(null, styleElement);
 			remove = function() {
-				styleElement.parentNode.removeChild(styleElement);
+				removeStyleElement(styleElement);
 				if(styleElement.href)
 					URL.revokeObjectURL(styleElement.href);
 			};
 		} else {
-			styleElement = createStyleElement();
+			styleElement = createStyleElement(options);
 			update = applyToTag.bind(null, styleElement);
 			remove = function() {
-				styleElement.parentNode.removeChild(styleElement);
+				removeStyleElement(styleElement);
 			};
 		}
 
@@ -646,7 +675,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	function applyToTag(styleElement, obj) {
 		var css = obj.css;
 		var media = obj.media;
-		var sourceMap = obj.sourceMap;
 
 		if(media) {
 			styleElement.setAttribute("media", media)
@@ -664,7 +692,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function updateLink(linkElement, obj) {
 		var css = obj.css;
-		var media = obj.media;
 		var sourceMap = obj.sourceMap;
 
 		if(sourceMap) {
@@ -687,20 +714,19 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_RESULT__;// TinyColor v1.3.0
+	var __WEBPACK_AMD_DEFINE_RESULT__;// TinyColor v1.4.1
 	// https://github.com/bgrins/TinyColor
 	// Brian Grinstead, MIT License
 
-	(function() {
+	(function(Math) {
 
 	var trimLeft = /^\s+/,
 	    trimRight = /\s+$/,
 	    tinyCounter = 0,
-	    math = Math,
-	    mathRound = math.round,
-	    mathMin = math.min,
-	    mathMax = math.max,
-	    mathRandom = math.random;
+	    mathRound = Math.round,
+	    mathMin = Math.min,
+	    mathMax = Math.max,
+	    mathRandom = Math.random;
 
 	function tinycolor (color, opts) {
 
@@ -808,11 +834,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    toHexString: function(allow3Char) {
 	        return '#' + this.toHex(allow3Char);
 	    },
-	    toHex8: function() {
-	        return rgbaToHex(this._r, this._g, this._b, this._a);
+	    toHex8: function(allow4Char) {
+	        return rgbaToHex(this._r, this._g, this._b, this._a, allow4Char);
 	    },
-	    toHex8String: function() {
-	        return '#' + this.toHex8();
+	    toHex8String: function(allow4Char) {
+	        return '#' + this.toHex8(allow4Char);
 	    },
 	    toRgb: function() {
 	        return { r: mathRound(this._r), g: mathRound(this._g), b: mathRound(this._b), a: this._a };
@@ -842,13 +868,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return hexNames[rgbToHex(this._r, this._g, this._b, true)] || false;
 	    },
 	    toFilter: function(secondColor) {
-	        var hex8String = '#' + rgbaToHex(this._r, this._g, this._b, this._a);
+	        var hex8String = '#' + rgbaToArgbHex(this._r, this._g, this._b, this._a);
 	        var secondHex8String = hex8String;
 	        var gradientType = this._gradientType ? "GradientType = 1, " : "";
 
 	        if (secondColor) {
 	            var s = tinycolor(secondColor);
-	            secondHex8String = s.toHex8String();
+	            secondHex8String = '#' + rgbaToArgbHex(s._r, s._g, s._b, s._a);
 	        }
 
 	        return "progid:DXImageTransform.Microsoft.gradient("+gradientType+"startColorstr="+hex8String+",endColorstr="+secondHex8String+")";
@@ -859,7 +885,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        var formattedString = false;
 	        var hasAlpha = this._a < 1 && this._a >= 0;
-	        var needsAlphaFormat = !formatSet && hasAlpha && (format === "hex" || format === "hex6" || format === "hex3" || format === "name");
+	        var needsAlphaFormat = !formatSet && hasAlpha && (format === "hex" || format === "hex6" || format === "hex3" || format === "hex4" || format === "hex8" || format === "name");
 
 	        if (needsAlphaFormat) {
 	            // Special case for "transparent", all other non-alpha formats
@@ -880,6 +906,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        if (format === "hex3") {
 	            formattedString = this.toHexString(true);
+	        }
+	        if (format === "hex4") {
+	            formattedString = this.toHex8String(true);
 	        }
 	        if (format === "hex8") {
 	            formattedString = this.toHex8String();
@@ -993,6 +1022,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    var rgb = { r: 0, g: 0, b: 0 };
 	    var a = 1;
+	    var s = null;
+	    var v = null;
+	    var l = null;
 	    var ok = false;
 	    var format = false;
 
@@ -1001,22 +1033,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    if (typeof color == "object") {
-	        if (color.hasOwnProperty("r") && color.hasOwnProperty("g") && color.hasOwnProperty("b")) {
+	        if (isValidCSSUnit(color.r) && isValidCSSUnit(color.g) && isValidCSSUnit(color.b)) {
 	            rgb = rgbToRgb(color.r, color.g, color.b);
 	            ok = true;
 	            format = String(color.r).substr(-1) === "%" ? "prgb" : "rgb";
 	        }
-	        else if (color.hasOwnProperty("h") && color.hasOwnProperty("s") && color.hasOwnProperty("v")) {
-	            color.s = convertToPercentage(color.s);
-	            color.v = convertToPercentage(color.v);
-	            rgb = hsvToRgb(color.h, color.s, color.v);
+	        else if (isValidCSSUnit(color.h) && isValidCSSUnit(color.s) && isValidCSSUnit(color.v)) {
+	            s = convertToPercentage(color.s);
+	            v = convertToPercentage(color.v);
+	            rgb = hsvToRgb(color.h, s, v);
 	            ok = true;
 	            format = "hsv";
 	        }
-	        else if (color.hasOwnProperty("h") && color.hasOwnProperty("s") && color.hasOwnProperty("l")) {
-	            color.s = convertToPercentage(color.s);
-	            color.l = convertToPercentage(color.l);
-	            rgb = hslToRgb(color.h, color.s, color.l);
+	        else if (isValidCSSUnit(color.h) && isValidCSSUnit(color.s) && isValidCSSUnit(color.l)) {
+	            s = convertToPercentage(color.s);
+	            l = convertToPercentage(color.l);
+	            rgb = hslToRgb(color.h, s, l);
 	            ok = true;
 	            format = "hsl";
 	        }
@@ -1163,7 +1195,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    s = bound01(s, 100);
 	    v = bound01(v, 100);
 
-	    var i = math.floor(h),
+	    var i = Math.floor(h),
 	        f = h - i,
 	        p = v * (1 - s),
 	        q = v * (1 - f * s),
@@ -1198,9 +1230,29 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	// `rgbaToHex`
 	// Converts an RGBA color plus alpha transparency to hex
-	// Assumes r, g, b and a are contained in the set [0, 255]
-	// Returns an 8 character hex
-	function rgbaToHex(r, g, b, a) {
+	// Assumes r, g, b are contained in the set [0, 255] and
+	// a in [0, 1]. Returns a 4 or 8 character rgba hex
+	function rgbaToHex(r, g, b, a, allow4Char) {
+
+	    var hex = [
+	        pad2(mathRound(r).toString(16)),
+	        pad2(mathRound(g).toString(16)),
+	        pad2(mathRound(b).toString(16)),
+	        pad2(convertDecimalToHex(a))
+	    ];
+
+	    // Return a 4 character hex if possible
+	    if (allow4Char && hex[0].charAt(0) == hex[0].charAt(1) && hex[1].charAt(0) == hex[1].charAt(1) && hex[2].charAt(0) == hex[2].charAt(1) && hex[3].charAt(0) == hex[3].charAt(1)) {
+	        return hex[0].charAt(0) + hex[1].charAt(0) + hex[2].charAt(0) + hex[3].charAt(0);
+	    }
+
+	    return hex.join("");
+	}
+
+	// `rgbaToArgbHex`
+	// Converts an RGBA color to an ARGB Hex8 string
+	// Rarely used, but required for "toFilter()"
+	function rgbaToArgbHex(r, g, b, a) {
 
 	    var hex = [
 	        pad2(convertDecimalToHex(a)),
@@ -1282,7 +1334,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// Values outside of this range will be wrapped into this range.
 	function spin(color, amount) {
 	    var hsl = tinycolor(color).toHsl();
-	    var hue = (mathRound(hsl.h) + amount) % 360;
+	    var hue = (hsl.h + amount) % 360;
 	    hsl.h = hue < 0 ? 360 + hue : hue;
 	    return tinycolor(hsl);
 	}
@@ -1369,26 +1421,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var rgb2 = tinycolor(color2).toRgb();
 
 	    var p = amount / 100;
-	    var w = p * 2 - 1;
-	    var a = rgb2.a - rgb1.a;
-
-	    var w1;
-
-	    if (w * a == -1) {
-	        w1 = w;
-	    } else {
-	        w1 = (w + a) / (1 + w * a);
-	    }
-
-	    w1 = (w1 + 1) / 2;
-
-	    var w2 = 1 - w1;
 
 	    var rgba = {
-	        r: rgb2.r * w1 + rgb1.r * w2,
-	        g: rgb2.g * w1 + rgb1.g * w2,
-	        b: rgb2.b * w1 + rgb1.b * w2,
-	        a: rgb2.a * p  + rgb1.a * (1 - p)
+	        r: ((rgb2.r - rgb1.r) * p) + rgb1.r,
+	        g: ((rgb2.g - rgb1.g) * p) + rgb1.g,
+	        b: ((rgb2.b - rgb1.b) * p) + rgb1.b,
+	        a: ((rgb2.a - rgb1.a) * p) + rgb1.a
 	    };
 
 	    return tinycolor(rgba);
@@ -1674,7 +1712,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    // Handle floating point rounding errors
-	    if ((math.abs(n - max) < 0.000001)) {
+	    if ((Math.abs(n - max) < 0.000001)) {
 	        return 1;
 	    }
 
@@ -1744,6 +1782,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var PERMISSIVE_MATCH4 = "[\\s|\\(]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")\\s*\\)?";
 
 	    return {
+	        CSS_UNIT: new RegExp(CSS_UNIT),
 	        rgb: new RegExp("rgb" + PERMISSIVE_MATCH3),
 	        rgba: new RegExp("rgba" + PERMISSIVE_MATCH4),
 	        hsl: new RegExp("hsl" + PERMISSIVE_MATCH3),
@@ -1752,9 +1791,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	        hsva: new RegExp("hsva" + PERMISSIVE_MATCH4),
 	        hex3: /^#?([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/,
 	        hex6: /^#?([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})$/,
+	        hex4: /^#?([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/,
 	        hex8: /^#?([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})$/
 	    };
 	})();
+
+	// `isValidCSSUnit`
+	// Take in a single string / number and check to see if it looks like a CSS unit
+	// (see `matchers` above for definition).
+	function isValidCSSUnit(color) {
+	    return !!matchers.CSS_UNIT.exec(color);
+	}
 
 	// `stringInputToObject`
 	// Permissive string parsing.  Take in a number of formats, and output an object
@@ -1796,10 +1843,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    if ((match = matchers.hex8.exec(color))) {
 	        return {
-	            a: convertHexToDecimal(match[1]),
-	            r: parseIntFromHex(match[2]),
-	            g: parseIntFromHex(match[3]),
-	            b: parseIntFromHex(match[4]),
+	            r: parseIntFromHex(match[1]),
+	            g: parseIntFromHex(match[2]),
+	            b: parseIntFromHex(match[3]),
+	            a: convertHexToDecimal(match[4]),
 	            format: named ? "name" : "hex8"
 	        };
 	    }
@@ -1809,6 +1856,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	            g: parseIntFromHex(match[2]),
 	            b: parseIntFromHex(match[3]),
 	            format: named ? "name" : "hex"
+	        };
+	    }
+	    if ((match = matchers.hex4.exec(color))) {
+	        return {
+	            r: parseIntFromHex(match[1] + '' + match[1]),
+	            g: parseIntFromHex(match[2] + '' + match[2]),
+	            b: parseIntFromHex(match[3] + '' + match[3]),
+	            a: convertHexToDecimal(match[4] + '' + match[4]),
+	            format: named ? "name" : "hex8"
 	        };
 	    }
 	    if ((match = matchers.hex3.exec(color))) {
@@ -1852,14 +1908,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    window.tinycolor = tinycolor;
 	}
 
-	})();
+	})(Math);
 
 
 /***/ },
 /* 6 */
 /***/ function(module, exports) {
 
-	module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":["ractive-colorpicker ",{"t":2,"r":".class"}],"style":[{"t":2,"r":".style"}]},"f":[{"t":7,"e":"div","a":{"class":"pickers"},"f":[{"t":4,"f":[{"t":7,"e":"div","a":{"class":"slPicker"},"v":{"mousedown":"slMousedown"},"f":[{"t":7,"e":"div","a":{"class":"base","style":["background: ",{"t":2,"r":".base"}]}}," ",{"t":7,"e":"div","a":{"class":"saturation"}}," ",{"t":7,"e":"div","a":{"class":"lightness"}}," ",{"t":7,"e":"i","a":{"class":"xy indicator","style":["left: ",{"t":2,"r":".saturation"},"%; top: ",{"t":2,"x":{"r":[".lightness"],"s":"100-_0"}},"%"]}}]}],"n":50,"r":"showSLPicker"}," ",{"t":4,"f":[{"t":7,"e":"div","a":{"class":"opacity checkered"},"v":{"mousedown":"opacityMousedown"},"f":[{"t":7,"e":"div","a":{"style":["background: linear-gradient(to right, transparent, ",{"t":2,"r":"opaque"},")"]}}," ",{"t":7,"e":"i","a":{"class":"x indicator","style":["left: ",{"t":2,"x":{"r":["a"],"s":"_0*100"}},"%"]}}]}],"n":50,"r":"showOpacitySlider"}," ",{"t":4,"f":[{"t":7,"e":"div","a":{"class":"formats"},"f":[{"t":7,"e":"label","m":[{"t":4,"f":["class='disabled'"],"n":50,"x":{"r":["a"],"s":"_0<1"}}],"f":[{"t":7,"e":"input","a":{"type":"radio","name":[{"t":2,"r":"format"}],"value":"Hex"},"m":[{"t":4,"f":["disabled"],"n":50,"x":{"r":["a"],"s":"_0<1"}}]}," Hex"]}," ",{"t":7,"e":"label","f":[{"t":7,"e":"input","a":{"type":"radio","name":[{"t":2,"r":"format"}],"value":"Rgb"}}," RGB"]}," ",{"t":7,"e":"label","f":[{"t":7,"e":"input","a":{"type":"radio","name":[{"t":2,"r":"format"}],"value":"Hsl"}}," HSL"]}]}],"n":50,"r":"showFormats"}]}," ",{"t":4,"f":[{"t":7,"e":"div","a":{"class":"hue"},"v":{"mousedown":"hueMousedown"},"f":[{"t":7,"e":"i","a":{"class":"y indicator","style":["top: ",{"t":2,"x":{"r":["h"],"s":"_0*100"}},"%"]}}]}],"n":50,"r":"showHueSlider"}," ",{"t":4,"f":[{"t":7,"e":"div","a":{"class":"inputs"},"f":[{"t":7,"e":"div","a":{"class":"color"},"f":[{"t":7,"e":"div","a":{"class":"checkered"}}," ",{"t":7,"e":"div","a":{"style":["background: ",{"t":2,"r":"_value"}]}}]}," ",{"t":4,"f":[{"t":7,"e":"input","a":{"class":"value","type":"text","value":[{"t":2,"r":"_value"}]}}],"n":50,"r":"showValueInput"}," ",{"t":4,"f":[{"t":7,"e":"div","a":{"class":"hsl"},"f":[{"t":7,"e":"div","f":[{"t":7,"e":"label","f":["H:"]},{"t":7,"e":"input","a":{"type":"number","value":[{"t":2,"r":"hue"}],"min":"0","max":"360"},"v":{"change":"hslChange"}}]}," ",{"t":7,"e":"div","f":[{"t":7,"e":"label","f":["S:"]},{"t":7,"e":"input","a":{"type":"number","value":[{"t":2,"r":"saturation"}],"min":"0","max":"100"},"v":{"change":"hslChange"}}]}," ",{"t":7,"e":"div","f":[{"t":7,"e":"label","f":["L:"]},{"t":7,"e":"input","a":{"type":"number","value":[{"t":2,"r":"lightness"}],"min":"0","max":"100"},"v":{"change":"hslChange"}}]}]}],"n":50,"r":"showHslInputs"}," ",{"t":4,"f":[{"t":7,"e":"div","a":{"class":"rgb"},"f":[{"t":7,"e":"div","f":[{"t":7,"e":"label","f":["R:"]},{"t":7,"e":"input","a":{"type":"number","value":[{"t":2,"r":"r"}],"min":"0","max":"255"},"v":{"change":"rgbChange"}}]}," ",{"t":7,"e":"div","f":[{"t":7,"e":"label","f":["G:"]},{"t":7,"e":"input","a":{"type":"number","value":[{"t":2,"r":"g"}],"min":"0","max":"255"},"v":{"change":"rgbChange"}}]}," ",{"t":7,"e":"div","f":[{"t":7,"e":"label","f":["B:"]},{"t":7,"e":"input","a":{"type":"number","value":[{"t":2,"r":"b"}],"min":"0","max":"255"},"v":{"change":"rgbChange"}}]}]}],"n":50,"r":"showRgbInputs"}]}],"n":50,"r":"showInputs"}]}]};
+	module.exports={"v":4,"t":[{"t":7,"e":"div","m":[{"n":"class","f":["ractive-colorpicker ",{"t":2,"r":".class"}],"t":13},{"n":"style","f":[{"t":2,"r":".style"}],"t":13}],"f":[{"t":7,"e":"div","m":[{"n":"class","f":"pickers","t":13}],"f":[{"t":4,"f":[{"t":7,"e":"div","m":[{"n":"class","f":"slPicker","t":13},{"n":"mousedown","f":"slMousedown","t":70}],"f":[{"t":7,"e":"div","m":[{"n":"class","f":"base","t":13},{"n":"style","f":["background: ",{"t":2,"r":".base"}],"t":13}]}," ",{"t":7,"e":"div","m":[{"n":"class","f":"saturation","t":13}]}," ",{"t":7,"e":"div","m":[{"n":"class","f":"lightness","t":13}]}," ",{"t":7,"e":"i","m":[{"n":"class","f":"xy indicator","t":13},{"n":"style","f":["left: ",{"t":2,"r":".saturation"},"%; top: ",{"t":2,"x":{"r":[".lightness"],"s":"100-_0"}},"%"],"t":13}]}]}],"n":50,"r":"showSLPicker"}," ",{"t":4,"f":[{"t":7,"e":"div","m":[{"n":"class","f":"opacity checkered","t":13},{"n":"mousedown","f":"opacityMousedown","t":70}],"f":[{"t":7,"e":"div","m":[{"n":"style","f":["background: linear-gradient(to right, transparent, ",{"t":2,"r":"opaque"},")"],"t":13}]}," ",{"t":7,"e":"i","m":[{"n":"class","f":"x indicator","t":13},{"n":"style","f":["left: ",{"t":2,"x":{"r":["a"],"s":"_0*100"}},"%"],"t":13}]}]}],"n":50,"r":"showOpacitySlider"}," ",{"t":4,"f":[{"t":7,"e":"div","m":[{"n":"class","f":"formats","t":13}],"f":[{"t":7,"e":"label","m":[{"t":4,"f":[{"n":"class","f":"disabled","t":13}],"n":50,"x":{"r":["a"],"s":"_0<1"}}],"f":[{"t":7,"e":"input","m":[{"n":"type","f":"radio","t":13},{"n":"name","f":[{"t":2,"r":"format"}],"t":13},{"n":"value","f":"Hex","t":13},{"t":4,"f":[{"n":"disabled","f":0,"t":13}],"n":50,"x":{"r":["a"],"s":"_0<1"}}]}," Hex"]}," ",{"t":7,"e":"label","f":[{"t":7,"e":"input","m":[{"n":"type","f":"radio","t":13},{"n":"name","f":[{"t":2,"r":"format"}],"t":13},{"n":"value","f":"Rgb","t":13}]}," RGB"]}," ",{"t":7,"e":"label","f":[{"t":7,"e":"input","m":[{"n":"type","f":"radio","t":13},{"n":"name","f":[{"t":2,"r":"format"}],"t":13},{"n":"value","f":"Hsl","t":13}]}," HSL"]}]}],"n":50,"r":"showFormats"}]}," ",{"t":4,"f":[{"t":7,"e":"div","m":[{"n":"class","f":"hue","t":13},{"n":"mousedown","f":"hueMousedown","t":70}],"f":[{"t":7,"e":"i","m":[{"n":"class","f":"y indicator","t":13},{"n":"style","f":["top: ",{"t":2,"x":{"r":["h"],"s":"_0*100"}},"%"],"t":13}]}]}],"n":50,"r":"showHueSlider"}," ",{"t":4,"f":[{"t":7,"e":"div","m":[{"n":"class","f":"inputs","t":13}],"f":[{"t":7,"e":"div","m":[{"n":"class","f":"color","t":13}],"f":[{"t":7,"e":"div","m":[{"n":"class","f":"checkered","t":13}]}," ",{"t":7,"e":"div","m":[{"n":"style","f":["background: ",{"t":2,"r":"_value"}],"t":13}]}]}," ",{"t":4,"f":[{"t":7,"e":"input","m":[{"n":"class","f":"value","t":13},{"n":"type","f":"text","t":13},{"n":"value","f":[{"t":2,"r":"_value"}],"t":13}]}],"n":50,"r":"showValueInput"}," ",{"t":4,"f":[{"t":7,"e":"div","m":[{"n":"class","f":"hsl","t":13}],"f":[{"t":7,"e":"div","f":[{"t":7,"e":"label","f":["H:"]},{"t":7,"e":"input","m":[{"n":"type","f":"number","t":13},{"n":"value","f":[{"t":2,"r":"hue"}],"t":13},{"n":"min","f":"0","t":13},{"n":"max","f":"360","t":13},{"n":"change","f":"hslChange","t":70}]}]}," ",{"t":7,"e":"div","f":[{"t":7,"e":"label","f":["S:"]},{"t":7,"e":"input","m":[{"n":"type","f":"number","t":13},{"n":"value","f":[{"t":2,"r":"saturation"}],"t":13},{"n":"min","f":"0","t":13},{"n":"max","f":"100","t":13},{"n":"change","f":"hslChange","t":70}]}]}," ",{"t":7,"e":"div","f":[{"t":7,"e":"label","f":["L:"]},{"t":7,"e":"input","m":[{"n":"type","f":"number","t":13},{"n":"value","f":[{"t":2,"r":"lightness"}],"t":13},{"n":"min","f":"0","t":13},{"n":"max","f":"100","t":13},{"n":"change","f":"hslChange","t":70}]}]}]}],"n":50,"r":"showHslInputs"}," ",{"t":4,"f":[{"t":7,"e":"div","m":[{"n":"class","f":"rgb","t":13}],"f":[{"t":7,"e":"div","f":[{"t":7,"e":"label","f":["R:"]},{"t":7,"e":"input","m":[{"n":"type","f":"number","t":13},{"n":"value","f":[{"t":2,"r":"r"}],"t":13},{"n":"min","f":"0","t":13},{"n":"max","f":"255","t":13},{"n":"change","f":"rgbChange","t":70}]}]}," ",{"t":7,"e":"div","f":[{"t":7,"e":"label","f":["G:"]},{"t":7,"e":"input","m":[{"n":"type","f":"number","t":13},{"n":"value","f":[{"t":2,"r":"g"}],"t":13},{"n":"min","f":"0","t":13},{"n":"max","f":"255","t":13},{"n":"change","f":"rgbChange","t":70}]}]}," ",{"t":7,"e":"div","f":[{"t":7,"e":"label","f":["B:"]},{"t":7,"e":"input","m":[{"n":"type","f":"number","t":13},{"n":"value","f":[{"t":2,"r":"b"}],"t":13},{"n":"min","f":"0","t":13},{"n":"max","f":"255","t":13},{"n":"change","f":"rgbChange","t":70}]}]}]}],"n":50,"r":"showRgbInputs"}]}],"n":50,"r":"showInputs"}]}],"e":{}};
 
 /***/ }
 /******/ ])
