@@ -15,6 +15,7 @@
         <demo></demo>
 
         <script src='../ractive-colorpicker.js'></script>
+        <script src='./ractive-dropdown.min.js'></script>
 
         <script id='template' type='text/ractive'>
 
@@ -69,37 +70,44 @@
             separate components.
             </p>
 
-        <pre>
-            <code>
-    &lt;div class='color picker button' style='background: \{{color}}' on-tap='toggle("open")&gt;
-        &lt;dropdown open='\{{open}}'&gt;
-            &lt;colorpicker value='\{{color}}'/&gt;
-        &lt;/dropdown&gt;
-    &lt;/div&gt;
-            </code>
-        </pre>
-
-           TODO: live example
+            <p>Using the <a href='https://github.com/jondum/ractive-dropdown'>ractive-dropdown</a> component:</p>
 
         <pre>
             <code>
-    &lt;div class='color picker input'&gt;
-
-        &lt;input type='text' value='\{{color}}'
-            on-focus='set("open", true)'
-            on-blur='set("open", false)'/&gt;
-
-        &lt;button class='color picker' style='background: \{{color}}'/&gt;
-
-        &lt;dropdown open='\{{open}}'&gt;
-            &lt;colorpicker value='\{{color}}'/&gt;
-        &lt;/dropdown&gt;
-
+&lt;dropdown&gt;
+    &lt;button class='color picker'&gt;Choose a color&lt;/button&gt;
+    &lt;div class='dropdown'&gt;
+        &lt;colorpicker value='\{{color}}'/&gt;
     &lt;/div&gt;
+&lt;/dropdown&gt;
             </code>
         </pre>
 
-        TODO: live example
+
+        <dropdown>
+            <button class='color picker' style='background: {{color}}'>Choose a color</button>
+            <div class='dropdown'>
+                <colorpicker value='{{color}}'/>
+            </div>
+        </dropdown>
+
+        <pre>
+            <code>
+&lt;dropdown&gt;
+    &lt;input type='text' value='\{{inputcolor}}'/&gt;
+    &lt;div class='dropdown'&gt;
+        &lt;colorpicker value='\{{inputcolor}}'/&gt;
+    &lt;/div&gt;
+&lt;/dropdown&gt;
+            </code>
+        </pre>
+
+        <dropdown>
+            <input type='text' value='{{inputcolor}}'/>
+            <div class='dropdown'>
+                <colorpicker value='{{inputcolor}}'/>
+            </div>
+        </dropdown>
 
         </section>
 
@@ -192,6 +200,7 @@
                 },
 
                 components: {
+                    dropdown: RactiveDropdown,
                     colorpicker:  RactiveColorpicker // don't do globals, kids
                     //colorpicker: require('ractive-colorpicker') // use a buildsystem
                 },
