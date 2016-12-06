@@ -26,6 +26,7 @@
     "webpack": "^1.12.7"
   },
   "dependencies": {
+    "ractive": "^0.8.5",
     "tinycolor2": "^1.3.0"
   }
 }
