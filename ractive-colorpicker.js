@@ -52,7 +52,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -362,9 +362,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Math.round(input);
 	}
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
@@ -378,8 +378,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/stylus-loader/index.js!./styles.styl", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/stylus-loader/index.js!./styles.styl");
+			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/stylus-loader/index.js!./styles.styl", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/stylus-loader/index.js!./styles.styl");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -388,23 +388,23 @@ return /******/ (function(modules) { // webpackBootstrap
 		module.hot.dispose(function() { update(); });
 	}
 
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".ractive-colorpicker {\n  display: -webkit-inline-box;\n  display: -moz-inline-box;\n  display: -webkit-inline-flex;\n  display: -ms-inline-flexbox;\n  display: inline-box;\n  display: inline-flex;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.ractive-colorpicker * {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.ractive-colorpicker .pickers,\n.ractive-colorpicker .inputs,\n.ractive-colorpicker .inputs > div {\n  display: -webkit-box;\n  display: -moz-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: box;\n  display: flex;\n  -webkit-box-lines: multiple;\n  -moz-box-lines: multiple;\n  -o-box-lines: multiple;\n  -webkit-flex-wrap: wrap;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  -webkit-box-orient: vertical;\n  -moz-box-orient: vertical;\n  -o-box-orient: vertical;\n  -webkit-flex-direction: column;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -ms-flex-line-pack: justify;\n  -webkit-align-content: space-between;\n  align-content: space-between;\n  -webkit-box-pack: justify;\n  -moz-box-pack: justify;\n  -o-box-pack: justify;\n  -ms-flex-pack: justify;\n  -webkit-justify-content: space-between;\n  justify-content: space-between;\n  -webkit-box-flex: 1;\n  -moz-box-flex: 1;\n  -o-box-flex: 1;\n  box-flex: 1;\n  -webkit-flex: 1 1 auto;\n  -ms-flex: 1 1 auto;\n  flex: 1 1 auto;\n}\n.ractive-colorpicker .slPicker {\n  width: 12em;\n  height: 12em;\n  position: relative;\n  border: 1px solid #333;\n}\n.ractive-colorpicker .slPicker div {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n}\n.ractive-colorpicker .slPicker .saturation {\n  background: -webkit-linear-gradient(left, #fff, rgba(255,255,255,0));\n  background: -moz-linear-gradient(left, #fff, rgba(255,255,255,0));\n  background: -o-linear-gradient(left, #fff, rgba(255,255,255,0));\n  background: -ms-linear-gradient(left, #fff, rgba(255,255,255,0));\n  background: linear-gradient(to right, #fff, rgba(255,255,255,0));\n}\n.ractive-colorpicker .slPicker .lightness {\n  background: -webkit-linear-gradient(bottom, #000, rgba(0,0,0,0));\n  background: -moz-linear-gradient(bottom, #000, rgba(0,0,0,0));\n  background: -o-linear-gradient(bottom, #000, rgba(0,0,0,0));\n  background: -ms-linear-gradient(bottom, #000, rgba(0,0,0,0));\n  background: linear-gradient(to top, #000, rgba(0,0,0,0));\n}\n.ractive-colorpicker .checkered {\n  background: #fff url(\"data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADJJREFUeNpiPHPmzH8GPMDY2JgRnzwTA4Vg1IDBYADj//94kwHD2bNn/48G4rA3ACDAANjWCn8l5H3aAAAAAElFTkSuQmCC\");\n}\n.ractive-colorpicker .color {\n  height: 1.5rem;\n  border: 1px solid #000;\n  position: relative;\n}\n.ractive-colorpicker .color .checkered {\n  height: 100%;\n}\n.ractive-colorpicker .color :nth-child(2) {\n  z-index: 3;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n}\n.ractive-colorpicker .hue {\n  width: 1rem;\n  margin-left: 1rem;\n  position: relative;\n  background: -webkit-linear-gradient(top, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);\n  background: -moz-linear-gradient(top, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);\n  background: -o-linear-gradient(top, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);\n  background: -ms-linear-gradient(top, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);\n  background: linear-gradient(to bottom, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);\n  border: 1px solid #333;\n}\n.ractive-colorpicker .colorHexInput {\n  width: 6em;\n}\n.ractive-colorpicker .inputs {\n  margin-left: 1rem;\n}\n.ractive-colorpicker .inputs .hsl,\n.ractive-colorpicker .inputs .rgb {\n  -webkit-box-flex: 1;\n  -moz-box-flex: 1;\n  -o-box-flex: 1;\n  box-flex: 1;\n  -webkit-flex: 1 0 auto;\n  -ms-flex: 1 0 auto;\n  flex: 1 0 auto;\n  margin-top: 0.5em;\n}\n.ractive-colorpicker .inputs label {\n  width: 1em;\n  display: inline-block;\n}\n.ractive-colorpicker .inputs div input {\n  width: 4em;\n}\n.ractive-colorpicker .inputs input {\n  height: 2em;\n  max-width: 65px;\n}\n.ractive-colorpicker .opacity {\n  width: 100%;\n  max-width: 12em;\n  height: 1rem;\n  position: relative;\n  border: 1px solid #333;\n  margin-top: 0.5em;\n}\n.ractive-colorpicker .opacity div {\n  width: 100%;\n  height: 100%;\n}\n.ractive-colorpicker .formats {\n  margin-top: 0.5em;\n}\n.ractive-colorpicker .indicator {\n  display: block;\n  position: absolute;\n  z-index: 30;\n}\n.ractive-colorpicker .indicator.x {\n  width: 4px;\n  height: 100%;\n  border: 1px solid #fff;\n  top: 0;\n}\n.ractive-colorpicker .indicator.x:before,\n.ractive-colorpicker .indicator.x:after {\n  content: '';\n  position: absolute;\n  border: 2px solid transparent;\n}\n.ractive-colorpicker .indicator.x:before {\n  top: -5px;\n  border-top-color: #333;\n}\n.ractive-colorpicker .indicator.x:before {\n  bottom: -5px;\n  border-bottom-color: #333;\n}\n.ractive-colorpicker .indicator.y {\n  height: 4px;\n  width: 100%;\n  border: 1px solid #fff;\n  margin-top: -4px;\n}\n.ractive-colorpicker .indicator.y:before,\n.ractive-colorpicker .indicator.y:after {\n  content: '';\n  position: absolute;\n  border: 2px solid transparent;\n}\n.ractive-colorpicker .indicator.y:before {\n  left: -4px;\n  border-left-color: #333;\n}\n.ractive-colorpicker .indicator.y:before {\n  right: -4px;\n  border-right-color: #333;\n}\n.ractive-colorpicker .indicator.xy {\n  background: #000;\n  border: 1px solid #fff;\n  height: 4px;\n  width: 4px;\n  border-radius: 100%;\n  left: 90%;\n  top: 20%;\n  margin-left: -2px;\n  margin-top: -2px;\n}\n.dragging .ractive-colorpicker .indicator {\n  border: 1px dashed #fff;\n}\n", ""]);
+	exports.push([module.id, ".ractive-colorpicker {\n  display: -webkit-inline-box;\n  display: -moz-inline-box;\n  display: -webkit-inline-flex;\n  display: -ms-inline-flexbox;\n  display: inline-box;\n  display: inline-flex;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.ractive-colorpicker * {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.ractive-colorpicker .pickers,\n.ractive-colorpicker .inputs,\n.ractive-colorpicker .inputs > div {\n  display: -webkit-box;\n  display: -moz-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: box;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -moz-box-orient: vertical;\n  -o-box-orient: vertical;\n  -webkit-flex-direction: column;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -ms-flex-line-pack: justify;\n  -webkit-align-content: space-between;\n  align-content: space-between;\n  -webkit-box-pack: justify;\n  -moz-box-pack: justify;\n  -o-box-pack: justify;\n  -ms-flex-pack: justify;\n  -webkit-justify-content: space-between;\n  justify-content: space-between;\n  -webkit-box-flex: 1;\n  -moz-box-flex: 1;\n  -o-box-flex: 1;\n  box-flex: 1;\n  -webkit-flex: 1 1 auto;\n  -ms-flex: 1 1 auto;\n  flex: 1 1 auto;\n}\n.ractive-colorpicker .slPicker {\n  width: 12em;\n  height: 12em;\n  position: relative;\n  border: 1px solid #333;\n}\n.ractive-colorpicker .slPicker div {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n}\n.ractive-colorpicker .slPicker .saturation {\n  background: -webkit-linear-gradient(left, #fff, rgba(255,255,255,0));\n  background: -moz-linear-gradient(left, #fff, rgba(255,255,255,0));\n  background: -o-linear-gradient(left, #fff, rgba(255,255,255,0));\n  background: -ms-linear-gradient(left, #fff, rgba(255,255,255,0));\n  background: linear-gradient(to right, #fff, rgba(255,255,255,0));\n}\n.ractive-colorpicker .slPicker .lightness {\n  background: -webkit-linear-gradient(bottom, #000, rgba(0,0,0,0));\n  background: -moz-linear-gradient(bottom, #000, rgba(0,0,0,0));\n  background: -o-linear-gradient(bottom, #000, rgba(0,0,0,0));\n  background: -ms-linear-gradient(bottom, #000, rgba(0,0,0,0));\n  background: linear-gradient(to top, #000, rgba(0,0,0,0));\n}\n.ractive-colorpicker .checkered {\n  background: #fff url(\"data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADJJREFUeNpiPHPmzH8GPMDY2JgRnzwTA4Vg1IDBYADj//94kwHD2bNn/48G4rA3ACDAANjWCn8l5H3aAAAAAElFTkSuQmCC\");\n}\n.ractive-colorpicker .color {\n  height: 1.5rem;\n  border: 1px solid #000;\n  position: relative;\n}\n.ractive-colorpicker .color .checkered {\n  height: 100%;\n}\n.ractive-colorpicker .color :nth-child(2) {\n  z-index: 3;\n}\n.ractive-colorpicker .hue {\n  width: 1rem;\n  margin-left: 1rem;\n  position: relative;\n  background: -webkit-linear-gradient(top, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);\n  background: -moz-linear-gradient(top, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);\n  background: -o-linear-gradient(top, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);\n  background: -ms-linear-gradient(top, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);\n  background: linear-gradient(to bottom, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);\n  border: 1px solid #333;\n}\n.ractive-colorpicker .colorHexInput {\n  width: 6em;\n}\n.ractive-colorpicker .inputs {\n  margin-left: 1rem;\n}\n.ractive-colorpicker .inputs .hsl,\n.ractive-colorpicker .inputs .rgb {\n  -webkit-box-flex: 1;\n  -moz-box-flex: 1;\n  -o-box-flex: 1;\n  box-flex: 1;\n  -webkit-flex: 1 0 auto;\n  -ms-flex: 1 0 auto;\n  flex: 1 0 auto;\n  margin-top: 0.5em;\n}\n.ractive-colorpicker .inputs label {\n  width: 1em;\n  display: inline-block;\n}\n.ractive-colorpicker .inputs div input {\n  width: 4em;\n}\n.ractive-colorpicker .inputs input {\n  height: 2em;\n  max-width: 65px;\n}\n.ractive-colorpicker .opacity {\n  width: 100%;\n  max-width: 12em;\n  height: 1rem;\n  position: relative;\n  border: 1px solid #333;\n  margin-top: 0.5em;\n}\n.ractive-colorpicker .opacity div {\n  width: 100%;\n  height: 100%;\n}\n.ractive-colorpicker .formats {\n  margin-top: 0.5em;\n}\n.ractive-colorpicker .indicator {\n  display: block;\n  position: absolute;\n  z-index: 30;\n}\n.ractive-colorpicker .indicator.x {\n  width: 4px;\n  height: 100%;\n  border: 1px solid #fff;\n  top: 0;\n}\n.ractive-colorpicker .indicator.x:before,\n.ractive-colorpicker .indicator.x:after {\n  content: '';\n  position: absolute;\n  border: 2px solid transparent;\n}\n.ractive-colorpicker .indicator.x:before {\n  top: -5px;\n  border-top-color: #333;\n}\n.ractive-colorpicker .indicator.x:before {\n  bottom: -5px;\n  border-bottom-color: #333;\n}\n.ractive-colorpicker .indicator.y {\n  height: 4px;\n  width: 100%;\n  border: 1px solid #fff;\n  margin-top: -4px;\n}\n.ractive-colorpicker .indicator.y:before,\n.ractive-colorpicker .indicator.y:after {\n  content: '';\n  position: absolute;\n  border: 2px solid transparent;\n}\n.ractive-colorpicker .indicator.y:before {\n  left: -4px;\n  border-left-color: #333;\n}\n.ractive-colorpicker .indicator.y:before {\n  right: -4px;\n  border-right-color: #333;\n}\n.ractive-colorpicker .indicator.xy {\n  background: #000;\n  border: 1px solid #fff;\n  height: 4px;\n  width: 4px;\n  border-radius: 100%;\n  left: 90%;\n  top: 20%;\n  margin-left: 2px;\n  margin-top: 2px;\n}\n.dragging .ractive-colorpicker .indicator {\n  border: 1px dashed #fff;\n}\n", ""]);
 
 	// exports
 
 
-/***/ },
+/***/ }),
 /* 3 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/*
 		MIT License http://www.opensource.org/licenses/mit-license.php
@@ -458,9 +458,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
+/***/ }),
 /* 4 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/*
 		MIT License http://www.opensource.org/licenses/mit-license.php
@@ -475,7 +475,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			};
 		},
 		isOldIE = memoize(function() {
-			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+			return /msie [6-9]\b/.test(self.navigator.userAgent.toLowerCase());
 		}),
 		getHeadElement = memoize(function () {
 			return document.head || document.getElementsByTagName("head")[0];
@@ -710,9 +710,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 
-/***/ },
+/***/ }),
 /* 5 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;// TinyColor v1.4.1
 	// https://github.com/bgrins/TinyColor
@@ -1911,13 +1911,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	})(Math);
 
 
-/***/ },
+/***/ }),
 /* 6 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports={"v":4,"t":[{"t":7,"e":"div","m":[{"n":"class","f":["ractive-colorpicker ",{"t":2,"r":".class"}],"t":13},{"n":"style","f":[{"t":2,"r":".style"}],"t":13}],"f":[{"t":7,"e":"div","m":[{"n":"class","f":"pickers","t":13}],"f":[{"t":4,"f":[{"t":7,"e":"div","m":[{"n":"class","f":"slPicker","t":13},{"n":"mousedown","f":"slMousedown","t":70}],"f":[{"t":7,"e":"div","m":[{"n":"class","f":"base","t":13},{"n":"style","f":["background: ",{"t":2,"r":".base"}],"t":13}]}," ",{"t":7,"e":"div","m":[{"n":"class","f":"saturation","t":13}]}," ",{"t":7,"e":"div","m":[{"n":"class","f":"lightness","t":13}]}," ",{"t":7,"e":"i","m":[{"n":"class","f":"xy indicator","t":13},{"n":"style","f":["left: ",{"t":2,"r":".saturation"},"%; top: ",{"t":2,"x":{"r":[".lightness"],"s":"100-_0"}},"%"],"t":13}]}]}],"n":50,"r":"showSLPicker"}," ",{"t":4,"f":[{"t":7,"e":"div","m":[{"n":"class","f":"opacity checkered","t":13},{"n":"mousedown","f":"opacityMousedown","t":70}],"f":[{"t":7,"e":"div","m":[{"n":"style","f":["background: linear-gradient(to right, transparent, ",{"t":2,"r":"opaque"},")"],"t":13}]}," ",{"t":7,"e":"i","m":[{"n":"class","f":"x indicator","t":13},{"n":"style","f":["left: ",{"t":2,"x":{"r":["a"],"s":"_0*100"}},"%"],"t":13}]}]}],"n":50,"r":"showOpacitySlider"}," ",{"t":4,"f":[{"t":7,"e":"div","m":[{"n":"class","f":"formats","t":13}],"f":[{"t":7,"e":"label","m":[{"t":4,"f":[{"n":"class","f":"disabled","t":13}],"n":50,"x":{"r":["a"],"s":"_0<1"}}],"f":[{"t":7,"e":"input","m":[{"n":"type","f":"radio","t":13},{"n":"name","f":[{"t":2,"r":"format"}],"t":13},{"n":"value","f":"Hex","t":13},{"t":4,"f":[{"n":"disabled","f":0,"t":13}],"n":50,"x":{"r":["a"],"s":"_0<1"}}]}," Hex"]}," ",{"t":7,"e":"label","f":[{"t":7,"e":"input","m":[{"n":"type","f":"radio","t":13},{"n":"name","f":[{"t":2,"r":"format"}],"t":13},{"n":"value","f":"Rgb","t":13}]}," RGB"]}," ",{"t":7,"e":"label","f":[{"t":7,"e":"input","m":[{"n":"type","f":"radio","t":13},{"n":"name","f":[{"t":2,"r":"format"}],"t":13},{"n":"value","f":"Hsl","t":13}]}," HSL"]}]}],"n":50,"r":"showFormats"}]}," ",{"t":4,"f":[{"t":7,"e":"div","m":[{"n":"class","f":"hue","t":13},{"n":"mousedown","f":"hueMousedown","t":70}],"f":[{"t":7,"e":"i","m":[{"n":"class","f":"y indicator","t":13},{"n":"style","f":["top: ",{"t":2,"x":{"r":["h"],"s":"_0*100"}},"%"],"t":13}]}]}],"n":50,"r":"showHueSlider"}," ",{"t":4,"f":[{"t":7,"e":"div","m":[{"n":"class","f":"inputs","t":13}],"f":[{"t":7,"e":"div","m":[{"n":"class","f":"color","t":13}],"f":[{"t":7,"e":"div","m":[{"n":"class","f":"checkered","t":13}]}," ",{"t":7,"e":"div","m":[{"n":"style","f":["background: ",{"t":2,"r":"_value"}],"t":13}]}]}," ",{"t":4,"f":[{"t":7,"e":"input","m":[{"n":"class","f":"value","t":13},{"n":"type","f":"text","t":13},{"n":"value","f":[{"t":2,"r":"_value"}],"t":13}]}],"n":50,"r":"showValueInput"}," ",{"t":4,"f":[{"t":7,"e":"div","m":[{"n":"class","f":"hsl","t":13}],"f":[{"t":7,"e":"div","f":[{"t":7,"e":"label","f":["H:"]},{"t":7,"e":"input","m":[{"n":"type","f":"number","t":13},{"n":"value","f":[{"t":2,"r":"hue"}],"t":13},{"n":"min","f":"0","t":13},{"n":"max","f":"360","t":13},{"n":"change","f":"hslChange","t":70}]}]}," ",{"t":7,"e":"div","f":[{"t":7,"e":"label","f":["S:"]},{"t":7,"e":"input","m":[{"n":"type","f":"number","t":13},{"n":"value","f":[{"t":2,"r":"saturation"}],"t":13},{"n":"min","f":"0","t":13},{"n":"max","f":"100","t":13},{"n":"change","f":"hslChange","t":70}]}]}," ",{"t":7,"e":"div","f":[{"t":7,"e":"label","f":["L:"]},{"t":7,"e":"input","m":[{"n":"type","f":"number","t":13},{"n":"value","f":[{"t":2,"r":"lightness"}],"t":13},{"n":"min","f":"0","t":13},{"n":"max","f":"100","t":13},{"n":"change","f":"hslChange","t":70}]}]}]}],"n":50,"r":"showHslInputs"}," ",{"t":4,"f":[{"t":7,"e":"div","m":[{"n":"class","f":"rgb","t":13}],"f":[{"t":7,"e":"div","f":[{"t":7,"e":"label","f":["R:"]},{"t":7,"e":"input","m":[{"n":"type","f":"number","t":13},{"n":"value","f":[{"t":2,"r":"r"}],"t":13},{"n":"min","f":"0","t":13},{"n":"max","f":"255","t":13},{"n":"change","f":"rgbChange","t":70}]}]}," ",{"t":7,"e":"div","f":[{"t":7,"e":"label","f":["G:"]},{"t":7,"e":"input","m":[{"n":"type","f":"number","t":13},{"n":"value","f":[{"t":2,"r":"g"}],"t":13},{"n":"min","f":"0","t":13},{"n":"max","f":"255","t":13},{"n":"change","f":"rgbChange","t":70}]}]}," ",{"t":7,"e":"div","f":[{"t":7,"e":"label","f":["B:"]},{"t":7,"e":"input","m":[{"n":"type","f":"number","t":13},{"n":"value","f":[{"t":2,"r":"b"}],"t":13},{"n":"min","f":"0","t":13},{"n":"max","f":"255","t":13},{"n":"change","f":"rgbChange","t":70}]}]}]}],"n":50,"r":"showRgbInputs"}]}],"n":50,"r":"showInputs"}]}],"e":{}};
 
-/***/ }
+/***/ })
 /******/ ])
 });
 ;
