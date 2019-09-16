@@ -1,6 +1,4 @@
 
-@import 'layout'
-
 $hue-gradient(dir)
 
    if dir is 'v' or dir is 'vertical'
@@ -20,7 +18,10 @@ $hue-gradient(dir)
         box-sizing border-box
 
     .pickers, .inputs, .inputs > div
-        layout vertical between
+        display flex
+        flex-direction column
+        align-content space-between
+        justify-content space-between
         flex 1 1 auto
 
     .slPicker
@@ -138,12 +139,13 @@ $hue-gradient(dir)
             background #000
             border 1px solid #fff
             height 4px
-            width @height
+            width 4px
             border-radius 100%
             left 90%
             top 20%
-            margin-left (-@width/2)
-            margin-top (-@width/2)
+            margin-left 2px
+            margin-top 2px
 
         .dragging &
             border 1px dashed #fff
+
